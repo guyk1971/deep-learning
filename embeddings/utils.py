@@ -51,9 +51,9 @@ def create_lookup_tables(words):
     :param words: Input list of words
     :return: A tuple of dicts.  The first dict....
     """
-    word_counts = Counter(words)
-    sorted_vocab = sorted(word_counts, key=word_counts.get, reverse=True)
-    int_to_vocab = {ii: word for ii, word in enumerate(sorted_vocab)}
-    vocab_to_int = {word: ii for ii, word in int_to_vocab.items()}
+    word_counts = Counter(words)    # create a sort of dictionary k,v=word,count
+    sorted_vocab = sorted(word_counts, key=word_counts.get, reverse=True)   # list of words sorted by their word count
+    int_to_vocab = {ii: word for ii, word in enumerate(sorted_vocab)}   # enumerate the words in sorted vocab
+    vocab_to_int = {word: ii for ii, word in int_to_vocab.items()}  # inverse mapping
 
     return vocab_to_int, int_to_vocab
