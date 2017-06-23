@@ -114,6 +114,7 @@ def test_model_inputs(model_inputs):
 
 def test_encoding_layer(encoding_layer):
     rnn_size = 512
+    # rnn_size = 100
     batch_size = 64
     num_layers = 3
     source_sequence_len = 22
