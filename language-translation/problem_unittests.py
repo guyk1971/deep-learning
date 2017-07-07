@@ -195,7 +195,7 @@ def test_decoding_layer(decoding_layer):
             'Found wrong type: {}'.format(type(infer_logits_output))
 
         assert train_decoder_output.rnn_output.get_shape().as_list() == [batch_size, None, vocab_size], \
-            'Wrong shape returned.  Found {}'.format(train_decoder_output.get_shape())
+            'Wrong shape returned.  Found {}'.format(train_decoder_output.rnn_output.get_shape())
         assert infer_logits_output.sample_id.get_shape().as_list() == [batch_size, None], \
              'Wrong shape returned.  Found {}'.format(infer_logits_output.sample_id.get_shape())
 
@@ -254,7 +254,7 @@ def test_seq2seq_model(seq2seq_model):
             'Found wrong type: {}'.format(type(infer_logits_output))
 
         assert train_decoder_output.rnn_output.get_shape().as_list() == [batch_size, None, vocab_size], \
-            'Wrong shape returned.  Found {}'.format(train_decoder_output.get_shape())
+            'Wrong shape returned.  Found {}'.format(train_decoder_output.rnn_output.get_shape())
         assert infer_logits_output.sample_id.get_shape().as_list() == [batch_size, None], \
              'Wrong shape returned.  Found {}'.format(infer_logits_output.sample_id.get_shape())
 
@@ -350,7 +350,7 @@ def test_decoding_layer_train(decoding_layer_train):
                 'Found wrong type: {}'.format(type(train_decoder_output))
 
             assert train_decoder_output.rnn_output.get_shape().as_list() == [batch_size, None, vocab_size], \
-                'Wrong shape returned.  Found {}'.format(train_decoder_output.get_shape())
+                'Wrong shape returned.  Found {}'.format(train_decoder_output.rnn_output.get_shape())
 
     _print_success_message()
 
